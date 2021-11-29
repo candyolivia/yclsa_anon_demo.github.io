@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Subjective Evaluation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="jumbotron text-center">
+  <h2>Speaker Anonymization Subjective Evaluation</h2>
+  <hr>
+  <h3>Contact Information</h3> 
+</div>
+
+<form name="submit-to-google-sheet" method="POST" action="final.html" data-toggle="validator" role="form">
+	<div class="container"> 
+		<div class="row">
+	    <div class="col">
+	    </div>
+	    <div class="col-5">
+	    	<div class="form-group">
+		      <div class="input-group mb-3">
+			    <label class="control-label col-sm-4" for="text_input">Name</label>
+			    <div class="controls col-sm-8">
+			      <input type="text" class="form-control input-md" placeholder="" id="name" name="name" required>
+			    </div>
+			  	</div>
+		  	</div>
+
+			<!-- Multiple Radios -->
+			<div class="form-group">
+			<div class="input-group mb-3" style="align-items: center">
+			  <label class="col-md-4 control-label" for="radios">Gender</label>
+			  <div class="col-md-4">
+			  <div class="radio">
+			    <label for="radios-0">
+			      <input type="radio" name="gender" id="gender" value="m" checked="checked">
+			      Male
+			    </label>
+			    <label for="radios-1">
+			      <input type="radio" name="gender" id="gender" value="f">
+			      Female
+			    </label>
+				</div>
+			  </div>
+			</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			<div class="input-group mb-3">
+			  <label class="col-md-4 control-label" for="text_input">Age</label>  
+			  <div class="col-md-4">
+			  <input id="age" name="age" type="number" placeholder="" class="form-control input-md" required>  
+			  </div>
+			</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+			<div class="input-group mb-3">
+			  <label class="col-md-4 control-label" for="text_input">Nationality</label>  
+			  <div class="col-md-8">
+				<input id="nationality" name="nationality" type="text" placeholder="" class="form-control input-md" required>
+				</div>
+			</div>
+			</div>
+
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<label class="col-md-4 control-label">English Ability</label>
+					<div class="col-md-8">
+						<select name="english" id="english">
+							<option value="poor">Poor</option>
+							<option value="fair">Fair</option>
+							<option value="good">Good</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="input-group mb-5">
+			    &nbsp;
+			</div>
+	    </div>
+	    <div class="col">
+	    </div>
+	  </div>
+		
+	</div>
+
+	<div class="jumbotron text-center">
+		<h3>Part 1: Intelligibility and Naturalness Test</h3>
+		<hr>
+		<h5 style="color:blue;">Compare the left utterance with the right utterance and 
+			<br> decide how is the intelligibility and naturalness of the right utterance.</h5>
+		<h5>Intelligibility scale: <br> 1 (mostly unintelligible), 2 (somewhat unintelligible), 3 (cannot decide), 4 (somewhat intelligible), 5 (mostly intelligible)</h5>
+		<h5>Naturalness ranges: <br> 1 (mostly unnatural), 2 (somewhat unnatural), 3 (cannot decide), 4 (somewhat natural), 5 (mostly natural)</h5>
+	</div>
+	<div class="container">
+		<div class="row">
+	    <div class="col">
+	    </div>
+		<div class="col-10">
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">1. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/8455-210777-0065.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/B1/8455-210777-0065.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i1" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i1" id="i1">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n1" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n1" id="n1">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">2. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/8842-302196-0007.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/B1/8842-302196-0007.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i2" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i2" id="i2">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n2" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n2" id="n2">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">3. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/p234_063_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/B1/p234_063_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i3" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i3" id="i3">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n3" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n3" id="n3">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">4. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/3576-138058-0032.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/P1/3576-138058-0032.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i4" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i4" id="i4">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n4" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n4" id="n4">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">5. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/5694-64025-0019.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/P1/5694-64025-0019.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i5" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i5" id="i5">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n5" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n5" id="n5">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">6. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/p274_170_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/P1/p274_170_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i6" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i6" id="i6">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n6" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n6" id="n6">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">7. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/652-130726-0029.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/P2/652-130726-0029.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i7" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i7" id="i7">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n7" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n7" id="n7">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">8. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/p247_197_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/P2/p247_197_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i8" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i8" id="i8">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n8" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n8" id="n8">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+		  	
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">9. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/O/p266_259_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part1/P2/p266_259_mic2.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="i9" style="font-size:80%;vertical-align: bottom;">Intelligibility</label>
+					<div class="controls col-sm-1">
+						<select name="i9" id="i9">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+					<label class="control-label col-sm-1" for="n9" style="font-size:80%;vertical-align: bottom;">Naturalness</label>
+					<div class="controls col-sm-1">
+						<select name="n9" id="n9">
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+							<option value=5>5</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+			<div class="input-group mb-5">
+			    &nbsp;
+			</div>
+	    </div>
+	    <div class="col">
+	    </div>
+	  </div>
+	</div>
+
+	<div class="jumbotron text-center">
+	  <h3>Part 2: Speaker Similarity Test</h3>
+	  <hr>
+	  <h5 style="color:blue;">How similar is the speaker of the left utterance with the speaker of the right utterance despite the same content?</h5>
+	</div>
+	<div class="container">
+		<div class="row">
+	    <div class="col">
+	    </div>
+		<div class="col-10">
+			<!-- %%%%%%%%%%%%%%%%%%% ORIGINAL - BASELINE %%%%%%%%%%%%%%%%%%%%%% -->
+			<!-- LIBRI-DEV -->
+			<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">1. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/libri_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s1">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s1" id="s1">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">2. &thinsp; </label> 
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/libri_dev_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s2">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s2" id="s2">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">3. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/libri_dev_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s3">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s3" id="s3">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>		
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- LIBRI-TEST -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">4. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/libri_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s4">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s4" id="s4">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">5. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/libri_test_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s5">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s5" id="s5">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">6. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/libri_test_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s6">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s6" id="s6">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- VCTK_DEV -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">7. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/vctk_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s7">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s7" id="s7">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">8. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/vctk_dev_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s7">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s8" id="s8">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">9. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/vctk_dev_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s9">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s9" id="s9">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- VCTK_TEST -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">10. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/vctk_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s10">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s10" id="s10">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">11. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/vctk_test_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s11">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s11" id="s11">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div> 
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">12. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/B1/vctk_test_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s12">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s12" id="s12">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- %%%%%%%%%%%%%%%%%%% ORIGINAL - PROPOSED 1 %%%%%%%%%%%%%%%%%%%%%% -->
+			<!-- LIBRI-DEV -->
+			<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">13. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/libri_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s13">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s13" id="s13">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">14. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/libri_dev_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s14">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s14" id="s14">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">15. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/libri_dev_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s15">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s15" id="s15">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- LIBRI-TEST -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">16. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/libri_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s16">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s16" id="s16">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">17. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/libri_test_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s17">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s17" id="s17">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">18. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/libri_test_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s18">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s18" id="s18">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- VCTK_DEV -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">19. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/vctk_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s19">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s19" id="s19">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">20. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/vctk_dev_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s20">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s20" id="s20">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">21. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/vctk_dev_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s21">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s21" id="s21">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- VCTK_TEST -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">22. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/vctk_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s22">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s22" id="s22">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">23. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/vctk_test_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s23">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s23" id="s23">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">24. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P1/vctk_test_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s24">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s24" id="s24">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- %%%%%%%%%%%%%%%%%%% ORIGINAL - PROPOSED 2 %%%%%%%%%%%%%%%%%%%%%% -->
+			<!-- LIBRI-DEV -->
+			<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">25. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/libri_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s25">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s25" id="s25">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">26. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/libri_dev_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s26">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s26" id="s26">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">27. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_dev_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/libri_dev_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s27">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s27" id="s27">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- LIBRI-TEST -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">28. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/libri_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s28">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s28" id="s28">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">29. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/libri_test_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_trials_f.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s29">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s29" id="s29">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">30. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/libri_test_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/libri_test_trials_m.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s30">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s30" id="s30">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- VCTK_DEV -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">31. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/vctk_dev_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s31">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s31" id="s31">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">32. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/vctk_dev_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s32">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s32" id="s32">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">33. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_dev_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/vctk_dev_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s33">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s33" id="s33">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- VCTK_TEST -->
+		  	<!-- ONE TEST -->
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">34. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/vctk_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_enrolls.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s34">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s34" id="s34">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">35. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/vctk_test_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_trials_f_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s35">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s35" id="s35">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+		  	<hr>
+
+		  	<!-- ONE TEST -->
+		  	<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="controls col-sm-4">
+						<label style="font-size:150%;vertical-align: top;">36. &thinsp; </label>
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/O/vctk_test_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<div class="controls col-sm-4">
+						<audio controls style="width: 80%;">
+							<source src="sounds/part2/P2/vctk_test_trials_m_all.wav" type="audio/wav">
+						</audio>
+					</div>
+					<label class="control-label col-sm-1" for="s36">Similarity</label>
+					<div class="controls col-sm-2">
+						<select name="s36" id="s36">
+							<option value=1>completely similar</option>
+							<option value=2>mostly similar</option>
+							<option value=3>somewhat similar</option>
+							<option value=4>mostly different</option>
+							<option value=5>completely different</option>
+						</select>
+					</div>
+				</div>
+		  	</div>
+
+
+			<div class="input-group mb-5">
+			    &nbsp;
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-12 text-center">
+					<input type="submit" class="btn btn-primary mb-2" value="Submit"/>
+				</div>
+			</div>
+
+	    </div>
+	    <div class="col">
+	    </div>
+	  </div>
+	</div>
+</form>
+</body>
+
+<script>
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyjWRFuF69JqUE6G4jDuhL4z2udjVY7f8AkhGq8nx-N2p7gxFM/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+      window.location.href = 'final.html';
+  })
+
+</script>
+
+
+</html>
